@@ -9,7 +9,7 @@ require 'Model/connexion.php';
 
 // apel du model user
 require 'Model/users.php';
-//require 'Model/articles.php';
+require 'Model/articles.php';
 
 //utilisation du model
 $users = getUsers();
