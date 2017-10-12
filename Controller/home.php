@@ -13,8 +13,7 @@ require 'Model/users.php';
 
 //utilisation du model
 $users = getUsers();
-
-//$articles = getArticles();
-
+//$users = getUsersAndArticle();
+$articles = getArticles();
 //affichage de la vue avec binding de users
 require 'View/homePage.php';

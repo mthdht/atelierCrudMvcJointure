@@ -78,49 +78,49 @@
       </form> 
     </section>
 
-    <!-- <section class="w3-container w3-margin">
-	 <h2 class="w3-padding"> Ses articles </h2>
-	 <table class="w3-table-all">
-	 <thead>
-         <tr>
-         <th>id</th>
-         <th>titre</th>
-	 <th>description</th>
-         <th>date</th>
-         </tr>
-	 </thead>
+    <section class="w3-container w3-margin">
+      <h2 class="w3-padding"> Ses articles </h2>
+      <table class="w3-table-all">
+	<thead>
+          <tr>
+            <th>id</th>
+            <th>titre</th>
+	    <th>description</th>
+            <th>date</th>
+          </tr>
+	</thead>
 
-	 <tbody>
-	 <?php
-	 foreach ($articles as $key => $article)
-	 {
-	 ?>
-	 
-	 <tr>
-	 
-	 <td>
-	 <a href="article.php?id=<?= $article['id']; ?>"><?= $article['id']; ?> </a>
-	 </td>
-	 <td>
-	 <a href="article.php?id=<?= $article['id']; ?>"><?= $article['titre']; ?> </a>
-	 </td>
-	 <td>
-	 <a href="article.php?id=<?= $article['id'];?>" class="" title=""><?= $article['description']; ?></a>
-	 </td>
-	 <td>
-	 <a href="article.php?id=<?= $article['id'];?>" class="" title=""><?= $article['date']; ?></a>
-	 </td>
+	<tbody>
+	  <?php
+	  foreach ($articles as $key => $article)
+	  {
+	  ?>
+	    
+	    <tr>
+	      
+	      <td>
+		<a href="article.php?id=<?= $article['id']; ?>"><?= $article['id']; ?> </a>
+	      </td>
+	      <td>
+		<a href="article.php?id=<?= $article['id']; ?>"><?= $article['titre']; ?> </a>
+	      </td>
+	      <td>
+		<a href="article.php?id=<?= $article['id'];?>" class="" title=""><?= $article['description']; ?></a>
+	      </td>
+	      <td>
+		<a href="article.php?id=<?= $article['id'];?>" class="" title=""><?= $article['date']; ?></a>
+	      </td>
 
-	 <td><button class="w3-button w3-orange" id="edit">Editer</button></td>
-	 </tr>
-	 <?php 
-	 }
-	 ?>
-	 
-	 
-	 </tbody>
-	 </table>
-    </section> -->
+	      <td><button class="w3-button w3-orange" id="edit">Editer</button></td>
+	    </tr>
+	  <?php 
+	  }
+	  ?>
+	  
+	  
+	</tbody>
+      </table>
+    </section>
     <!--main page -->
 
     <!-- footer of page -->
