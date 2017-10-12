@@ -34,100 +34,55 @@
 
     <!--main page -->
     <section class="main w3-container w3-margin">
-      <h2 class="w3-padding"> Utilisateur </h2>
       <table class="w3-table-all">
-		<thead>
-	<tr>
-	<th>id</th>
-	<th>Nom</th>
-		<th>password</th>
-	<th>Age</th>
+	<thead>
+          <tr>
+            <th>id</th>
+            <th>titre</th>
+	    <th>description</th>
+            <th>date</th>
           </tr>
 	</thead>
 
-		<tbody>
-		
-		<tr>
-		
-		<td>
-			<a href="user.php?id=<?= $user['id']; ?>"><?= $user['id']; ?> </a>
-	      </td>
-		<td>
-			<a href="user.php?id=<?= $user['id']; ?>"><?= $user['nom']; ?> </a>
-	      </td>
-		<td>
-			<a href="user.php?id=<?= $user['id'];?>" class="" title=""><?= $user['password']; ?></a>
-	      </td>
-		<td>
-			<a href="user.php?id=<?= $user['id'];?>" class="" title=""><?= $user['age']; ?></a>
-	      </td>
+	<tbody>
+	  
+	  <tr>
+	    
+	    <td>
+	      <a href="article.php?id=<?= $article['id']; ?>"><?= $article['id']; ?> </a>
+	    </td>
+	    <td>
+	      <a href="article.php?id=<?= $article['id']; ?>"><?= $article['titre']; ?> </a>
+	    </td>
+	    <td>
+	      <a href="article.php?id=<?= $article['id'];?>" class="" title=""><?= $article['description']; ?></a>
+	    </td>
+	    <td>
+	      <a href="article.php?id=<?= $article['id'];?>" class="" title=""><?= $article['date']; ?></a>
+	    </td>
 
-		<td><button class="w3-button w3-orange" id="edit">Editer</button></td>
-	    </tr>
-		
+	    <td><button class="w3-button w3-orange" id="edit">Editer</button></td>
+	  </tr>
+	  
 	</tbody>
-            </table>
+      </table>
 
-      <form action="user.php?id=<?= $user['id']; ?>" method="post" id="form" class="w3-margin" style="display:none">
+      <form action="article.php?id=<?= $article['id']; ?>" method="post" id="form" class="w3-margin" style="display:none">
 
-	<input name="nom" type="text" value="<?=$user['nom']; ?>" placeholder="" class="w3-input w3-col m7" /> <br/>
-	<input name="password" type="password" value="<?=$user['password']; ?>" placeholder="" class="w3-input w3-col m7" /> <br/>
-	<input name="age" type="number" value="<?=$user['age']; ?>" placeholder="" class="w3-input w3-col m7" /> <br/>
+	<input name="titre" type="text" value="<?=$article['titre']; ?>" placeholder="" class="w3-input w3-col m7" /> <br/>
+	<input name="description" type="text" value="<?=$article['description']; ?>" placeholder="" class="w3-input w3-col m7" /> <br/>
+	<input name="date" type="date" value="<?=$article['date']; ?>" placeholder="" class="w3-input w3-col m7" /> <br/>
 	
 	<input type="submit" value="Submit" class="w3-button w3-green w3-margin" >
       </form> 
     </section>
+    <!--main pdate -->
 
-    <!-- <section class="w3-container w3-margin">
-	 <h2 class="w3-padding"> Ses articles </h2>
-	 <table class="w3-table-all">
-	 <thead>
-         <tr>
-         <th>id</th>
-         <th>titre</th>
-	 <th>description</th>
-         <th>date</th>
-         </tr>
-	 </thead>
-
-	 <tbody>
-	 <?php
-	 foreach ($articles as $key => $article)
-	 {
-	 ?>
-	 
-	 <tr>
-	 
-	 <td>
-	 <a href="article.php?id=<?= $article['id']; ?>"><?= $article['id']; ?> </a>
-	 </td>
-	 <td>
-	 <a href="article.php?id=<?= $article['id']; ?>"><?= $article['titre']; ?> </a>
-	 </td>
-	 <td>
-	 <a href="article.php?id=<?= $article['id'];?>" class="" title=""><?= $article['description']; ?></a>
-	 </td>
-	 <td>
-	 <a href="article.php?id=<?= $article['id'];?>" class="" title=""><?= $article['date']; ?></a>
-	 </td>
-
-	 <td><button class="w3-button w3-orange" id="edit">Editer</button></td>
-	 </tr>
-	 <?php 
-	 }
-	 ?>
-	 
-	 
-	 </tbody>
-	 </table>
-    </section> -->
-    <!--main page -->
-
-    <!-- footer of page -->
+    <!-- footer of pdate -->
     <footer>
 
     </footer>
-    <!-- footer of page -->
+    <!-- footer of pdate -->
 
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -151,7 +106,7 @@
          e=o.createElement(i);r=o.getElementsByTagName(i)[0];
          e.src='//www.google-analytics.com/analytics.js';
          r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-     ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+     ga('create','UA-XXXXX-X','auto');ga('send','pdateview');
     </script>
   </body>
 </html>

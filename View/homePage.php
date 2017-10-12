@@ -33,13 +33,23 @@
     <!-- header of page -->
 
     <!--main page -->
-    <section class="main w3-container w3-margin">
-      <table class="w3-table-all">
+    <h2 class="main w3-container w3-margin">
+      <h2 class="w3-padding"> Utilisateurs <button class="w3-button w3-green w3-margin-left w3-medium" id="addUser">Add User</button></h2>
+      <form action="user.php" method="post" id="formAddUser" class="w3-margin" style="display:none">
+
+	<input name="nom" type="text" value="" placeholder="Name" class="w3-input w3-col m7" /> <br/>
+	<input name="password" type="password" value="" placeholder="****" class="w3-input w3-col m7" /> <br/>
+	<input name="age" type="number" value="" placeholder="Ex: 17" class="w3-input w3-col m7" /> <br/>
+	
+	<input type="submit" value="Submit" class="w3-button w3-green w3-margin" >
+      </form> 
+      <table class="w3-table-all w3-margin">
 	<thead>
           <tr>
             <th>id</th>
             <th>Nom</th>
             <th>Age</th>
+	    <th>Action</th>
           </tr>
 	</thead>
 
@@ -57,16 +67,89 @@
 		<a href="user.php?id=<?= $user['id']; ?>"><?= $user['nom']; ?> </a>
 	      </td>
 	      <td>
-		<a href="user.php?id=<?= $user['id'];?>" class="" title=""><?= $user['age']; ?></a>
+		    <a href="user.php?id=<?= $user['id'];?>" class="" title=""><?= $user['age']; ?></a>
 	      </td>
-	    
+	      <td>
+		<form action="user.php" method="post" class="" style="">
+		  <input name="delete" type="hidden" value="<?= $user['id'];?>"/>
+		  <input class="w3-button w3-red" id="" type="Submit" name="" value="Supprimer"/>
+		</form>
+		
+	      </td>
+	        
 	      </tr>
 	    <?php
 	    }
 	    ?>
 	</tbody>
-      </table>
-    </section>
+                        </table>
+
+
+      <!-- <h2 class="w3-padding"> articles  <button class="w3-button w3-green w3-margin-left w3-medium" id="addArticle">Add Article</button></h2>
+
+	   <form action="article.php" method="post" id="formAddArticle" class="w3-margin" style="display:none">
+
+	   <input name="titre" type="text" value="" placeholder="titre de l article" class="w3-input w3-col m7" /> <br/>
+	   <textarea name="description" id="" rows="" cols="" tabindex="" placeholder="une description de l article" class="w3-input w3-col m7"></textarea>
+	   <input name="date" type="date" value="" placeholder="YYYY-MM-DD" class="w3-input w3-col m7 w3-margin-bottom" /> <br/>
+	   
+	   <select id="" name="user_id" class="w3-select">
+	   <?php
+	   foreach($users as $key => $user)
+	   {
+	   ?>
+	   <option value="<?php echo $user['id'] ?>"><?php echo $user['id'] ?></option>
+	   <?php 
+	   }
+	   ?>
+	   </select>
+	   <input type="submit" value="Submit" class="w3-button w3-green w3-margin" >
+	   </form> 
+	   <table class="w3-table-all w3-margin">
+	   <thead>
+           <tr>
+           <th>id</th>
+           <th>titre</th>
+           <th>description</th>
+	   <th>date</th>
+	   <th>Action</th>
+           </tr>
+	   </thead>
+
+	   <tbody>
+	   <?php
+	   foreach ($articles as $key => $article)
+	   {
+	   ?>
+	   <tr>
+	   
+	   <td>
+	   <a href="article.php?id=<?= $article['id']; ?>"><?= $article['id']; ?> </a>
+	   </td>
+	   <td>
+	   <a href="article.php?id=<?= $article['id']; ?>"><?= $article['titre']; ?> </a>
+	   </td>
+	   <td>
+	   <a href="article.php?id=<?= $article['id'];?>" class="" title=""><?= $article['description']; ?></a>
+	   </td>
+	   <td>
+	   <a href="article.php?id=<?= $article['id'];?>" class="" title=""><?= $article['date']; ?></a>
+	   </td>
+	   <td>
+	   <form action="article.php" method="post" class="" style="">
+	   <input name="delete" type="hidden" value="<?= $article['id'];?>"/>
+	   <input class="w3-button w3-red" id="" type="Submit" name="" value="Supprimer"/>
+	   </form>
+	   </td>
+	   
+	   </tr>
+	   <?php
+	   }
+	   ?>
+	   </tbody>
+      </table> -->
+      
+    
     <!--main page -->
 
     <!-- footer of page -->
@@ -82,6 +165,24 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
+    <script type="text/javascript">
+     document.getElementById('addUser').addEventListener("click", displayFormUser);
+     document.getElementById('addArticle').addEventListener("click", displayFormArticle);
+
+     function displayFormUser() {
+	 if (document.getElementById('formAddUser').style.display == 'block') {
+	     document.getElementById('formAddUser').style.display = 'none';
+	 } else document.getElementById('formAddUser').style.display = 'block';
+     }
+
+     function displayFormArticle() {
+	 if (document.getElementById('formAddArticle').style.display == 'block') {
+	     document.getElementById('formAddArticle').style.display = 'none';
+	 } else document.getElementById('formAddArticle').style.display = 'block';
+     }
+     
+    </script>
+    
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
