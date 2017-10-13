@@ -13,7 +13,7 @@ require 'Model/connexion.php';
 // apel du model user
 require 'Model/users.php';
 
-//require 'Model/articles.php';
+require 'Model/articles.php';
 
 
 if (isset($_POST['nom']) && isset($_POST['age']) && isset($_POST['password']) && isset($_GET['id'])) {
@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
     //utilisation du model
     $user = getUser($_GET['id']);
 
-    //$articles = getArticlesByUser($user['id']);
+    $articles = getArticlesByUser($user['id']);
 
     //affichage de la vue avec binding de users
     require 'View/user.php';
